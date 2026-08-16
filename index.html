@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>50-day high alerts</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="50-Day Highs">
+<meta name="theme-color" content="#0d0d0d">
+<meta name="description" content="Every USDT market on Binance, scanned daily for 50-day highs.">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>
+  :root {
+    color-scheme: light;
+    --plane:#f9f9f7; --surface:#fcfcfb; --surface-2:#f2f1ee;
+    --ink:#0b0b0b; --ink-2:#52514e; --muted:#898781;
+    --grid:#e1e0d9; --axis:#c3c2b7; --border:rgba(11,11,11,0.10);
+    --good:#0ca30c; --good-text:#006300; --crit:#d03b3b; --warn:#fab219;
+    --s1:#2a78d6; --chip:rgba(11,11,11,0.05);
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --plane:#0d0d0d; --surface:#1a1a19; --surface-2:#211f1e;
+    --ink:#ffffff; --ink-2:#c3c2b7; --muted:#898781;
+    --grid:#2c2c2a; --axis:#383835; --border:rgba(255,255,255,0.10);
+    --good:#0ca30c; --good-text:#0ca30c; --crit:#d03b3b; --warn:#fab219;
+    --s1:#3987e5; --chip:rgba(255,255,255,0.06);
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; padding:0; }
+  body { background:var(--plane); color:var(--ink); font-size:14px; line-height:1.5;
+         font-family:system-ui,-apple-system,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1180px; margin:0 auto;
+         padding:calc(18px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right))
+                 calc(70px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left)); }
+
+  header.top { display:flex; flex-wrap:wrap; gap:10px 14px; align-items:flex-start; justify-content:space-between; }
+  h1 { font-size:19px; margin:0; font-weight:650; letter-spacing:-0.01em; }
+  .sub { color:var(--muted); font-size:12.5px; margin-top:2px; }
+  .ctrls { display:flex; gap:7px; align-items:center; flex-wrap:wrap; }
+  button, select, input {
+    font:inherit; font-size:12.5px; color:var(--ink); background:var(--surface);
+    border:1px solid var(--border); border-radius:8px; padding:6px 10px;
+  }
+  button, select { cursor:pointer; }
+  button:hover, select:hover { background:var(--surface-2); }
+  button.primary { background:var(--ink); color:var(--plane); border-color:var(--ink); font-weight:600; }
+  button.primary:hover { opacity:.88; background:var(--ink); }
+  button[disabled] { opacity:.5; cursor:default; }
+  button.on { border-color:var(--good); color:var(--good-text); font-weight:600; }
+  input#filter { width:120px; }
+
+  #progress { margin:14px 0 4px; display:none; }
+  .bar { height:5px; background:var(--grid); border-radius:99px; overflow:hidden; }
+  .bar > i { display:block; height:100%; width:0%; background:var(--s1); border-radius:99px; transition:width .15s linear; }
+  #progressText { font-size:12px; color:var(--muted); margin-top:6px; }
+
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:10px; margin:18px 0 22px; }
+  .tile { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 13px; }
+  .tile.hit { border-color:rgba(12,163,12,.45); }
+  .tile .k { font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+  .tile .v { font-size:26px; font-weight:640; margin-top:4px; letter-spacing:-0.02em; }
+  .tile .n { font-size:11.5px; color:var(--muted); margin-top:2px; }
+
+  section { margin-bottom:24px; }
+  h2 { font-size:14.5px; margin:0 0 3px; font-weight:640; }
+  h2 .count { color:var(--muted); font-weight:450; }
+  .hint { font-size:12px; color:var(--muted); margin:0 0 10px; max-width:78ch; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+  .scroll { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:13px; }
+  th, td { padding:8px 12px; text-align:right; white-space:nowrap; }
+  th:first-child, td:first-child { text-align:left; }
+  th { font-size:11px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); font-weight:600;
+       border-bottom:1px solid var(--border); background:var(--surface); position:sticky; top:0; cursor:pointer; user-select:none; }
+  th:hover { color:var(--ink); }
+  th .ar { opacity:.55; font-size:9px; }
+  tbody tr { border-bottom:1px solid var(--grid); }
+  tbody tr:last-child { border-bottom:none; }
+  tbody tr:hover { background:var(--surface-2); }
+  td.num { font-variant-numeric:tabular-nums; }
+  .sym { font-weight:600; }
+  .base { color:var(--muted); font-weight:400; font-size:11.5px; }
+  .up { color:var(--good-text); } .down { color:var(--crit); } .flat { color:var(--ink-2); }
+  .chip { display:inline-block; font-size:10.5px; padding:1px 7px; border-radius:99px; background:var(--chip); color:var(--ink-2); }
+  .chip.fresh { background:rgba(12,163,12,.15); color:var(--good-text); font-weight:600; }
+  .chip.live { background:rgba(250,178,25,.16); color:var(--warn); font-weight:600; }
+  .pips { display:inline-flex; gap:2.5px; vertical-align:middle; margin-right:5px; }
+  .pip { width:6px; height:6px; border-radius:2px; background:var(--axis); }
+  .pip.on { background:var(--s1); }
+  .empty { padding:24px 14px; color:var(--muted); font-size:13px; text-align:center; white-space:normal; }
+  details.card > summary { padding:11px 14px; cursor:pointer; font-size:13px; font-weight:600; list-style:none; }
+  details.card > summary::-webkit-details-marker { display:none; }
+  details.card > summary::before { content:"▸ "; color:var(--muted); }
+  details.card[open] > summary::before { content:"▾ "; }
+  .note { font-size:12px; color:var(--muted); border-top:1px solid var(--grid); padding-top:12px; margin-top:22px; }
+  .note b { color:var(--ink-2); }
+  .banner { border:1px solid var(--border); border-left:3px solid var(--crit); background:var(--surface);
+            border-radius:8px; padding:11px 13px; margin:14px 0; color:var(--ink-2); font-size:12.5px; display:none; }
+  @media (max-width:620px) { .ctrls { width:100%; } #scan { flex:1; } .tile .v { font-size:22px; } th, td { padding:7px 9px; font-size:12.5px; } input#filter { width:88px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <h1>50-day high alerts</h1>
+      <div class="sub" id="srcline">Scanning every USDT market on Binance · signal when a coin closes above all 50 of its previous daily closes</div>
+    </div>
+    <div class="ctrls">
+      <input id="filter" placeholder="Filter…" autocomplete="off">
+      <select id="volSel" title="Ignore markets thinner than this">
+        <option value="0" selected>All markets</option>
+        <option value="1000000">&gt; $1M / 24h</option>
+        <option value="10000000">&gt; $10M / 24h</option>
+        <option value="100000000">&gt; $100M / 24h</option>
+      </select>
+      <button id="notify" title="Desktop alert when a new coin hits a 50-day high">🔔 Alerts off</button>
+      <button id="auto" title="Rescan automatically">↻ Auto off</button>
+      <button id="scan" class="primary">Scan</button>
+      <button id="theme" title="Light / dark">◐</button>
+    </div>
+  </header>
+
+  <div id="banner" class="banner"></div>
+
+  <div id="progress">
+    <div class="bar"><i id="bar"></i></div>
+    <div id="progressText">Starting…</div>
+  </div>
+
+  <div id="app" style="display:none">
+    <div class="tiles" id="tiles"></div>
+
+    <section>
+      <h2>Signals <span class="count" id="cSig"></span></h2>
+      <p class="hint" id="hSig">Coins whose most recent completed daily candle closed higher than every one of the previous 50 daily closes. Binance days close at 00:00 UTC. Click any column to sort.</p>
+      <div class="card scroll"><table id="tSig"></table></div>
+    </section>
+
+    <section>
+      <h2>Breaking out right now <span class="count" id="cLive"></span></h2>
+      <p class="hint">Trading above the 50-day line on today's unfinished candle. Not signals yet — they only count if they close there, and plenty fall back before 00:00 UTC.</p>
+      <div class="card scroll"><table id="tLive"></table></div>
+    </section>
+
+    <section>
+      <details class="card" id="holdWrap">
+        <summary>Signalled in the last 5 days <span class="count" id="cHold"></span></summary>
+        <div class="scroll" style="border-top:1px solid var(--border)"><table id="tHold"></table></div>
+      </details>
+    </section>
+
+    <div class="note" id="foot"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+"use strict";
+
+const CFG = {
+  lookback: 50,     // the close must beat this many previous daily closes
+  hold: 5,          // how long a signal stays on the recent list
+  slots: 20,
+  histDays: 6,
+  candles: 80,      // daily bars pulled per coin (50 + 5 + slack)
+  minQuoteVol: 0,
+  concurrency: 14,
+  autoMins: 10
+};
+const DAY = 86400000;
+const $ = id => document.getElementById(id);
+
+const SOURCES = [
+  { name: "Binance USDT perpetuals", tickers: "https://fapi.binance.com/fapi/v1/ticker/24hr",
+    klines: s => `https://fapi.binance.com/fapi/v1/klines?symbol=${s}&interval=1d&limit=${CFG.candles}` },
+  { name: "Binance USDT spot", tickers: "https://data-api.binance.vision/api/v3/ticker/24hr",
+    klines: s => `https://data-api.binance.vision/api/v3/klines?symbol=${s}&interval=1d&limit=${CFG.candles}` },
+  { name: "Binance USDT spot", tickers: "https://api.binance.com/api/v3/ticker/24hr",
+    klines: s => `https://api.binance.com/api/v3/klines?symbol=${s}&interval=1d&limit=${CFG.candles}` }
+];
+const EXCLUDE = /^(USDC|FDUSD|TUSD|BUSD|DAI|EUR|GBP|AEUR|USDP|SUSD|XUSD|USD1|EURI|PAXG)USDT$/;
+const LEVERAGED = /(UP|DOWN|BULL|BEAR)USDT$/;
+
+/* ---------- formatting ---------- */
+const fmtPct = (x, d = 1) => (x >= 0 ? "+" : "−") + Math.abs(x).toFixed(d) + "%";
+const cls = x => x > 0.0001 ? "up" : (x < -0.0001 ? "down" : "flat");
+function fmtPx(p) {
+  if (!isFinite(p)) return "—";
+  if (p >= 1000) return p.toLocaleString(undefined, { maximumFractionDigits: 0 });
+  if (p >= 1) return p.toFixed(3);
+  if (p >= 0.01) return p.toFixed(5);
+  return p.toPrecision(3);
+}
+const fmtVol = v => v >= 1e9 ? "$" + (v / 1e9).toFixed(1) + "B" : v >= 1e6 ? "$" + (v / 1e6).toFixed(0) + "M" : "$" + (v / 1e3).toFixed(0) + "K";
+const dstr = t => new Date(t).toISOString().slice(0, 10);
+const base = s => s.replace(/USDT$/, "");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+async function getJSON(url, tries = 3) {
+  let err;
+  for (let i = 0; i < tries; i++) {
+    try {
+      const r = await fetch(url, { cache: "no-store" });
+      if (r.status === 429 || r.status === 418 || r.status >= 500) {
+        await new Promise(res => setTimeout(res, 800 * (i + 1) + Math.random() * 400));
+        err = new Error("HTTP " + r.status); continue;
+      }
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return await r.json();
+    } catch (e) { err = e; await new Promise(res => setTimeout(res, 350 * (i + 1))); }
+  }
+  throw err;
+}
+async function pool(items, n, worker, onTick) {
+  const out = new Array(items.length); let idx = 0, done = 0;
+  async function run() {
+    while (idx < items.length) {
+      const i = idx++;
+      try { out[i] = await worker(items[i]); } catch (e) { out[i] = null; }
+      if (onTick) onTick(++done, items.length);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(n, items.length) }, run));
+  return out;
+}
+
+/* ---------- the rule ----------
+   A signal fires on a completed daily bar whose close is strictly greater than
+   every close of the previous 50 completed bars. The current, in-progress bar
+   never fires a signal; it only supplies the live price. */
+function analyse(candles, rule) {
+  const now = Date.now();
+  const lastBar = candles[candles.length - 1];
+  const live = lastBar && (now < lastBar.t + DAY) ? lastBar : null;
+  const bars = live ? candles.slice(0, -1) : candles.slice();
+  if (bars.length < CFG.lookback + 2) return null;
+
+  const key = rule === "high" ? "h" : "c";
+  const refAt = i => { let m = -Infinity; for (let j = i - CFG.lookback; j < i; j++) if (bars[j][key] > m) m = bars[j][key]; return m; };
+
+  const last = bars.length - 1;
+  const signals = [];
+  const from = Math.max(CFG.lookback, bars.length - CFG.histDays - CFG.hold - 1);
+  for (let i = from; i <= last; i++) {
+    const ref = refAt(i);
+    if (bars[i].c > ref) {
+      const age = last - i;
+      const done = age >= CFG.hold;
+      signals.push({
+        t: bars[i].t, entry: bars[i].c, ref, age,
+        open: !done, daysLeft: done ? 0 : CFG.hold - age,
+        exit: done ? bars[i + CFG.hold].c : null,
+        exitT: done ? bars[i + CFG.hold].t : null,
+        ret: done ? (bars[i + CFG.hold].c / bars[i].c - 1) * 100 : null
+      });
+    }
+  }
+  const price = live ? live.c : bars[last].c;
+  let liveLine = -Infinity;
+  for (let j = bars.length - CFG.lookback; j < bars.length; j++) if (bars[j][key] > liveLine) liveLine = bars[j][key];
+
+  return { signals, price, lastClose: bars[last].c, lastBarT: bars[last].t,
+           line: liveLine, distPct: (price / liveLine - 1) * 100,
+           forming: !!live && live.c > liveLine, bars: bars.length };
+}
+
+/* ---------- state ---------- */
+let STATE = null, LOADING = false, AUTO = false, NOTIFY = false;
+let timer = null, tick = null, nextAt = 0;
+let seen = null;               // symbols already announced, so alerts only fire on new ones
+let sortBy = { sig: { k: "clearedBy", d: -1 }, live: { k: "distPct", d: -1 } };
+
+/* ---------- scan ---------- */
+async function scan() {
+  if (LOADING) return;
+  LOADING = true; $("scan").disabled = true; $("banner").style.display = "none";
+  $("progress").style.display = "block";
+  setProg(0, 1, "Listing every USDT market…");
+
+  let src = null, tickers = null, lastErr = null;
+  for (const s of SOURCES) { try { tickers = await getJSON(s.tickers, 2); src = s; break; } catch (e) { lastErr = e; } }
+  if (!tickers) {
+    fail("Could not reach Binance's public price API from this browser — usually a region block, a VPN or an offline connection rather than a bug. " +
+         (lastErr ? "(" + esc(lastErr.message) + ")" : ""));
+    return;
+  }
+
+  const floor = +$("volSel").value;
+  const universe = tickers
+    .filter(t => t.symbol.endsWith("USDT") && !t.symbol.includes("_") && !EXCLUDE.test(t.symbol)
+              && !LEVERAGED.test(t.symbol) && +t.quoteVolume >= floor)
+    .map(t => ({ symbol: t.symbol, vol: +t.quoteVolume, chg: +t.priceChangePercent }))
+    .sort((a, b) => b.vol - a.vol);
+
+  if (!universe.length) { fail("No USDT markets came back above that volume filter."); return; }
+
+  setProg(0, universe.length, "Checking " + universe.length + " coins…");
+  const rows = await pool(universe, CFG.concurrency, async u => {
+    const k = await getJSON(src.klines(u.symbol), 3);
+    if (!Array.isArray(k) || k.length < CFG.lookback + 3) return null;
+    const candles = k.map(x => ({ t: +x[0], o: +x[1], h: +x[2], l: +x[3], c: +x[4] }));
+    const a = analyse(candles, "close");
+    if (!a) return null;
+    return Object.assign({ symbol: u.symbol, vol: u.vol, chg: u.chg }, a);
+  }, (d, n) => setProg(d, n, "Checking " + n + " coins…"));
+
+  const ok = rows.filter(Boolean);
+  STATE = { src, scanned: universe.length, ok, tooNew: universe.length - ok.length, at: Date.now() };
+  $("progress").style.display = "none";
+  $("app").style.display = "block";
+  LOADING = false; $("scan").disabled = false;
+  render();
+  if (AUTO) arm();
+}
+
+function setProg(d, n, label) {
+  $("bar").style.width = (n ? d / n * 100 : 0).toFixed(1) + "%";
+  $("progressText").textContent = label + (n > 1 ? "   " + d + " / " + n : "");
+}
+function fail(msg) {
+  $("progress").style.display = "none";
+  $("banner").style.display = "block";
+  $("banner").innerHTML = "<b>No data.</b> " + msg;
+  LOADING = false; $("scan").disabled = false;
+}
+
+/* ---------- render ---------- */
+function render() {
+  const S = STATE;
+  const lastT = S.ok.reduce((m, r) => Math.max(m, r.lastBarT), 0);
+  const q = $("filter").value.trim().toUpperCase();
+  const match = sym => !q || base(sym).includes(q);
+
+  const sig = [], live = [], hold = [];
+  for (const r of S.ok) {
+    const fresh = r.signals.find(s => s.age === 0 && s.t === lastT);
+    if (fresh) sig.push({ symbol: r.symbol, vol: r.vol, chg: r.chg, t: fresh.t,
+                          close: fresh.entry, ref: fresh.ref,
+                          clearedBy: (fresh.entry / fresh.ref - 1) * 100,
+                          price: r.price, since: (r.price / fresh.entry - 1) * 100 });
+    for (const s of r.signals) if (s.open && !(s.age === 0 && s.t === lastT))
+      hold.push({ symbol: r.symbol, vol: r.vol, t: s.t, entry: s.entry, price: r.price,
+                  pnl: (r.price / s.entry - 1) * 100, daysLeft: s.daysLeft });
+    if (r.forming && !fresh) live.push({ symbol: r.symbol, vol: r.vol, chg: r.chg,
+                                         price: r.price, line: r.line, distPct: r.distPct,
+                                         recent: r.signals.some(s => s.open) });
+  }
+
+  // desktop alert for coins that were not on the list at the previous scan
+  const nowSet = new Set(sig.map(s => s.symbol));
+  if (seen) {
+    const fresh = [...nowSet].filter(s => !seen.has(s));
+    if (fresh.length && NOTIFY && "Notification" in window && Notification.permission === "granted") {
+      new Notification(fresh.length + " new 50-day high" + (fresh.length > 1 ? "s" : ""),
+        { body: fresh.slice(0, 12).map(base).join(", ") + (fresh.length > 12 ? " +" + (fresh.length - 12) + " more" : ""), tag: "50dh" });
+    }
+  }
+  seen = nowSet;
+
+  const fSig = sig.filter(r => match(r.symbol)).sort(cmp(sortBy.sig));
+  const fLive = live.filter(r => match(r.symbol)).sort(cmp(sortBy.live));
+  hold.sort((a, b) => b.t - a.t || b.vol - a.vol);
+
+  $("tiles").innerHTML = [
+    tile("Signals on last close", String(sig.length), lastT ? dstr(lastT) + " UTC candle" : "—", sig.length > 0),
+    tile("Breaking out live", String(live.length), "today's unfinished candle", false),
+    tile("Coins tracked", String(S.ok.length), S.tooNew ? S.tooNew + " skipped — under 52 days old" : "all had 50+ days of history", false),
+    tile("Last scan", new Date(S.at).toTimeString().slice(0, 5), AUTO ? "auto-rescan every " + CFG.autoMins + " min" : "auto-rescan off", false)
+  ].join("");
+
+  $("cSig").textContent = "· " + fSig.length + (q ? " of " + sig.length : "");
+  $("tSig").innerHTML = fSig.length ? tbl("sig",
+    [["Coin", "symbol"], ["Close", "close"], ["Beat", "ref"], ["By", "clearedBy"], ["Now", "price"], ["Since close", "since"], ["24h", "chg"], ["24h volume", "vol"]],
+    fSig.map(r => [
+      `<span class="sym">${esc(base(r.symbol))}</span> <span class="base">USDT</span> <span class="chip fresh">50d high</span>`,
+      num(fmtPx(r.close)), num(fmtPx(r.ref)), num(`<span class="up">${fmtPct(r.clearedBy, 2)}</span>`),
+      num(fmtPx(r.price)), num(`<span class="${cls(r.since)}">${fmtPct(r.since)}</span>`),
+      num(`<span class="${cls(r.chg)}">${fmtPct(r.chg)}</span>`), num(fmtVol(r.vol))
+    ])) : empty(q ? "No coin matching “" + esc(q) + "” hit a 50-day high on the last close."
+                  : "No coin closed at a 50-day high on the last completed candle.");
+
+  $("cLive").textContent = "· " + fLive.length + (q ? " of " + live.length : "");
+  $("tLive").innerHTML = fLive.length ? tbl("live",
+    [["Coin", "symbol"], ["Now", "price"], ["50-day line", "line"], ["Above by", "distPct"], ["24h", "chg"], ["24h volume", "vol"]],
+    fLive.map(r => [
+      `<span class="sym">${esc(base(r.symbol))}</span> <span class="base">USDT</span> <span class="chip live">unconfirmed</span>` +
+        (r.recent ? ` <span class="chip">already signalled this week</span>` : ""),
+      num(fmtPx(r.price)), num(fmtPx(r.line)), num(`<span class="up">${fmtPct(r.distPct, 2)}</span>`),
+      num(`<span class="${cls(r.chg)}">${fmtPct(r.chg)}</span>`), num(fmtVol(r.vol))
+    ])) : empty("Nothing is trading above its 50-day line right now.");
+
+  $("cHold").textContent = "· " + hold.length;
+  $("tHold").innerHTML = hold.length ? tbl(null,
+    [["Coin"], ["Signalled"], ["Close then"], ["Now"], ["Move"], ["Days left of 5"]],
+    hold.map(r => [
+      `<span class="sym">${esc(base(r.symbol))}</span> <span class="base">USDT</span>`,
+      num(dstr(r.t)), num(fmtPx(r.entry)), num(fmtPx(r.price)),
+      num(`<span class="${cls(r.pnl)}">${fmtPct(r.pnl)}</span>`),
+      num(pips(r.daysLeft) + `<span style="font-variant-numeric:tabular-nums">${r.daysLeft}</span>`)
+    ])) : empty("Nothing signalled in the previous 5 days.");
+
+  $("srcline").innerHTML = `Scanning every market on ${esc(S.src.name)} · signal when a coin closes above all 50 of its previous daily closes`;
+  $("foot").innerHTML =
+    `<b>${S.ok.length} coins checked</b> against ${CFG.lookback} days of history at ${new Date(S.at).toISOString().replace("T", " ").slice(0, 16)} UTC. ` +
+    `A signal needs a <b>completed</b> daily candle, and Binance days end at 00:00 UTC — so the signal list changes once a day, while the live list moves all day. ` +
+    `Desktop alerts only fire while this page is open. Research tool, not advice.`;
+}
+
+function cmp(s) {
+  return (a, b) => {
+    const x = a[s.k], y = b[s.k];
+    if (typeof x === "string") return s.d * x.localeCompare(y);
+    return s.d * ((x || 0) - (y || 0));
+  };
+}
+function tile(k, v, n, hit) {
+  return `<div class="tile${hit ? " hit" : ""}"><div class="k">${k}</div><div class="v">${v}</div><div class="n">${esc(n)}</div></div>`;
+}
+function num(h) { return `<td class="num">${h}</td>`; }
+function tbl(key, headers, rows) {
+  const s = key ? sortBy[key] : null;
+  return "<thead><tr>" + headers.map(([label, k]) => {
+    const on = s && k === s.k;
+    return `<th ${key && k ? `data-t="${key}" data-k="${k}"` : ""}>${label}${on ? ` <span class="ar">${s.d < 0 ? "▼" : "▲"}</span>` : ""}</th>`;
+  }).join("") + "</tr></thead><tbody>" +
+    rows.map(cs => "<tr>" + cs.map(c => c.startsWith("<td") ? c : `<td>${c}</td>`).join("") + "</tr>").join("") + "</tbody>";
+}
+function empty(msg) { return `<tbody><tr><td class="empty" colspan="8">${msg}</td></tr></tbody>`; }
+function pips(left) {
+  let h = '<span class="pips">';
+  for (let i = 0; i < CFG.hold; i++) h += `<span class="pip${i < left ? " on" : ""}"></span>`;
+  return h + "</span>";
+}
+
+/* ---------- auto-rescan ---------- */
+function arm() {
+  clearTimeout(timer); clearInterval(tick);
+  nextAt = Date.now() + CFG.autoMins * 60000;
+  timer = setTimeout(scan, CFG.autoMins * 60000);
+  tick = setInterval(() => {
+    if (!AUTO) return;
+    const left = Math.max(0, nextAt - Date.now());
+    const el = document.querySelector("#tiles .tile:last-child .n");
+    if (el) el.textContent = "next scan in " + Math.floor(left / 60000) + "m " + String(Math.floor(left / 1000) % 60).padStart(2, "0") + "s";
+  }, 1000);
+}
+function disarm() { clearTimeout(timer); clearInterval(tick); }
+
+/* ---------- wiring ---------- */
+$("scan").addEventListener("click", scan);
+$("volSel").addEventListener("change", scan);
+$("filter").addEventListener("input", () => { if (STATE) render(); });
+$("theme").addEventListener("click", () => {
+  const r = document.documentElement;
+  r.dataset.theme = r.dataset.theme === "dark" ? "light" : "dark";
+});
+$("auto").addEventListener("click", () => {
+  AUTO = !AUTO;
+  $("auto").classList.toggle("on", AUTO);
+  $("auto").textContent = AUTO ? "↻ Auto on" : "↻ Auto off";
+  if (AUTO) arm(); else disarm();
+  if (STATE) render();
+});
+$("notify").addEventListener("click", async () => {
+  if (!("Notification" in window)) { $("notify").textContent = "🔔 Unsupported"; return; }
+  if (!NOTIFY) {
+    const p = Notification.permission === "granted" ? "granted" : await Notification.requestPermission();
+    if (p !== "granted") { $("notify").textContent = "🔔 Blocked"; return; }
+    NOTIFY = true;
+    if (!AUTO) $("auto").click();          // alerts are pointless without rescanning
+  } else NOTIFY = false;
+  $("notify").classList.toggle("on", NOTIFY);
+  $("notify").textContent = NOTIFY ? "🔔 Alerts on" : "🔔 Alerts off";
+});
+document.addEventListener("click", e => {
+  const th = e.target.closest("th[data-k]");
+  if (!th || !STATE) return;
+  const s = sortBy[th.dataset.t];
+  if (s.k === th.dataset.k) s.d *= -1; else { s.k = th.dataset.k; s.d = th.dataset.k === "symbol" ? 1 : -1; }
+  render();
+});
+
+scan();
+})();
+</script>
+</body>
+</html>
