@@ -1,4 +1,4 @@
-name: 50/5 daily scan
+: 50/5 daily scan
 
 # 00:05 UTC — five minutes after the daily candle that produces signals closes.
 # GitHub often runs scheduled jobs late, sometimes by up to an hour. That is
